@@ -35,12 +35,12 @@ def num_transacciones(data, representar='N'):
     plt.style.use('ggplot')  # Utilizaremos el tema ggplot
 
     # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(55, 30))
+    fig = plt.figure(figsize=(60, 40))
     plt.bar(x, y)
     plt.xticks(range(len(x)), x, fontsize=8, rotation=90)
-    plt.xlabel('Identificador hash de cada bloque')
-    plt.ylabel('Número de transacciones / bloque')
-    plt.title('NÚMERO DE TRANSACCIONES EJECUTADAS EN CADA BLOQUE')
+    plt.xlabel('Identificador hash de cada bloque', fontsize=18)
+    plt.ylabel('Número de transacciones / bloque', fontsize=18)
+    plt.title('NÚMERO DE TRANSACCIONES EJECUTADAS EN CADA BLOQUE', fontsize=30)
     plt.savefig('../img/numtransacciones.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
