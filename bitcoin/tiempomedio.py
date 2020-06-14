@@ -1,4 +1,5 @@
 import datetime
+import matplotlib.pyplot as plt
 
 
 def tiempo_medio_bloques(block_data, representar='N'):

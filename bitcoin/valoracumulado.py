@@ -1,4 +1,4 @@
-
+import matplotlib.pyplot as plt
 
 def valor_acumulado_txs(block_data, txs_data, representar='N'):
     '''
