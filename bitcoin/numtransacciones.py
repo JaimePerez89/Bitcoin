@@ -8,7 +8,8 @@ def num_transacciones(data, representar='N'):
     se crea una imagen png en la carpeta "img". Si el argumento de entrada
     eje x y eje y.
 
-    :param  blocks_data:
+    :param  blocks_data: diccionario con la información de bloques (resultante de ejecutar
+                        la función de lectura.
             representar: 'Y' la función representa por pantalla la gráfica junto
                          al mensaje.
                          'N' (valor por defecto) la función no representa la

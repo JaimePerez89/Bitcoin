@@ -2,6 +2,11 @@
 
 def valor_acumulado_txs(block_data, txs_data, representar='N'):
     '''
+    Función que devuelve por pantalla el valor acumulado de las transacciones ejecutadas
+    para cada bloque.
+    Adicionalmente, se genera una imagen png con la representación gráfica de los resultados,
+    siendo además, mostrada por pantalla si el usuario así lo indica durante la llamada a la
+    función.
 
     :param block_data: diccionario con la información de bloques (resultante de ejecutar
                         la función de lectura.
@@ -13,6 +18,7 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
     :return: mensaje por pantalla con info sobre bloque y valor acumulado de las transacciones
             'valoracumulado.png' en la carpeta de proyecto 'img' con los resultados
     '''
+
     # Inicializo dos listas a las cuales les iremos insertando la información
     # del valor acumulado, con el objetivo de representar gráficamente los
     # resultados
