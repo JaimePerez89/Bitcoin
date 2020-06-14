@@ -1,6 +1,24 @@
 import datetime
+import matplotlib.pyplot as plt
+
 
 def media_size_bloque_hr(block_data, representar='N'):
+    '''
+    Función que agrupa el tamaño de cada bloque en función de la hora de inicio
+    y devuelve por pantalla el tamaño medio horario.
+    Si se indica con el parámetro "representar", junto al mensaje se representan
+    gráficamente los resultados mediante un gráfico de barras
+
+    :param block_data: diccionario con la información de bloques (resultante de ejecutar
+                        la función de lectura.
+    :param representar: 'Y' la función representa por pantalla la gráfica junto
+                         al mensaje.
+                         'N' (valor por defecto) la función no representa la
+                         gráfica junto al mensaje
+    :return: mensaje por pantalla con info sobre el tamaño medio de los bloques en función
+                de la hora de inicio
+            'tamañomediobloques.png' en la carpeta de proyecto 'img'
+    '''
 
     # Inicializamos dos listas que nos servirán para representar los
     # resultados
@@ -58,8 +76,6 @@ def media_size_bloque_hr(block_data, representar='N'):
     fig = plt.figure(figsize=(20, 10))
     plt.bar(hora_ejex, tamaño_medio_y)
     plt.xticks(range(len(hora_ejex)), hora_ejex, fontsize=16, rotation=90)
-    # La etiqueta x solo vamos a incluir la referencia de un bloque. La referencia del anterior
-    # la vamos a omitir para no saturar más aún el gráfico
     plt.xlabel('Hora del día', fontsize=18)
     plt.ylabel('Tamaño medio de los bloques', fontsize=18)
     plt.title('TAMAÑO MEDIO DE LOS BLOQUES PARA CADA HORA', fontsize=20)
