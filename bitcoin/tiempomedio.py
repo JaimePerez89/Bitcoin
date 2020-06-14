@@ -25,7 +25,7 @@ def tiempo_medio_bloques(block_data, representar='N'):
     for i in block_data:
         # Obtenemos la fecha de inicio del bloque
         tiempo_actual = block_data[i]['time']
-        tiempo_actual = datetime.date.fromtimestamp(tiempo_actual)
+        tiempo_actual = datetime.datetime.fromtimestamp(tiempo_actual)
 
         # Para obtener la fecha de inicio del bloque anterior
         # Obtenemos el bloque previo al actual
@@ -34,7 +34,7 @@ def tiempo_medio_bloques(block_data, representar='N'):
 
         try:
             tiempo_previo = block_data[bloque_previo]['time']
-            tiempo_previo = datetime.date.fromtimestamp(tiempo_previo)
+            tiempo_previo = datetime.datetime.fromtimestamp(tiempo_previo)
 
             # Calculamos la diferencia entre la ejecución de los bloques
             delta = tiempo_actual - tiempo_previo
@@ -44,7 +44,7 @@ def tiempo_medio_bloques(block_data, representar='N'):
             delta_time_y.append(delta.total_seconds())
 
             # Mostramos el resultado por pantalla
-            print("El tiempo trancurrido entre el bloque '{}' y el bloque '{}' ha sido de {}"
+            print("El tiempo trancurrido entre el bloque '{}' y el bloque '{}' ha sido de {} segundos"
                   .format(i, bloque_previo, delta.total_seconds()))
 
         except:
