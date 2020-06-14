@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-def num_transacciones(data, representar='N'):
+
+def num_transacciones(block_data, representar='N'):
     '''
     La  función analiza los datos de bloques y presenta por pantalla un mensaje
     para cada bloque donde se expone el número de transacciones producidas
@@ -8,7 +9,7 @@ def num_transacciones(data, representar='N'):
     se crea una imagen png en la carpeta "img". Si el argumento de entrada
     eje x y eje y.
 
-    :param  blocks_data: diccionario con la información de bloques (resultante de ejecutar
+    :param  block_data: diccionario con la información de bloques (resultante de ejecutar
                         la función de lectura.
             representar: 'Y' la función representa por pantalla la gráfica junto
                          al mensaje.
@@ -18,19 +19,21 @@ def num_transacciones(data, representar='N'):
     :return mensaje por pantalla con info sobre bloque y num. transacciones
             'numtransacciones.png' en la carpeta de proyecto 'img'
     '''
+
     # Creamos dos listas vacias, que serán los futuros ejes de los gráficos
     x = []
     y = []
 
     # Iteramos para cada elemento del diccionario de entrada
-    for i in data:
+    for i in block_data:
         # Añadimos la información a las listas de ejes
         x.append(i)
-        y.append(data[i]['nTx'])
+        y.append(block_data[i]['nTx'])
 
         # Imprimimos por pantalla un mensaje donde se expone el bloque analizado
         # y el número de transacciones ocurridas en él
-        print("El bloque '{}' tiene \t{}\t transacciones".format(i, data[i]['nTx']))
+        print("El bloque '{}' tiene \t{} transacciones"
+              .format(i, block_data[i]['nTx']))
 
     # Representamos gráficamente los resultados
     plt.style.use('ggplot')  # Utilizaremos el tema ggplot
