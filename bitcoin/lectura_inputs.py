@@ -12,15 +12,16 @@ def lectura_blocks():
     # Creamos un diccionario vacio que almacenará la información deseada del input
     block_data = {}
 
-    # Dado que la ubicación del archivo será fija en el proyecto, se la pasamos directamente
+    # Dado que la ubicación del archivo será fija en el proyecto, le pasamos el path directamente
     with open('../data/blocks.json', 'r') as f:
         for line in f:
             df_line = json.loads(line)
             # Almacenamos la información que deseamos en el diccionario previamente creado
             # De forma que la key del diccionario será el hash identificativo del bloque
-            # Y los items serán la información en formato de lista con el orden mostrado a continuación
-            block_data[df_line['hash']] = [df_line['size'], df_line['tx'], df_line['time'], df_line['nTx'],
-                                           df_line['previousblockhash']]
+            # Y los items serán a su vez diccionarios con la información deseada en forma de listas
+            block_data[df_line['hash']] = {'size': df_line['size'], 'tx': df_line['tx'],
+                                           'time': df_line['time'], 'nTx': df_line['nTx'],
+                                           'previousblockhash': df_line['previousblockhash']}
     return block_data
 
 
@@ -48,10 +49,13 @@ def lectura_transacciones():
             for i in df_line['vout']:
                 values.append(i['value'])  # Lo añadimos al ventor inicializado antes
 
-            # Añadimos al diccionario final solo la información que deseamos
-            # Las keys del diccionario serán los identificadores de cada transacción "txid"
-            # El contenido de cada key será una lista con el hash identificativo del bloque
-            # al que pertenece, una lista con todos los valores de las transacciones, y el
-            # tiempo registrado de inicio de la transacción
-            txs_data[df_line['txid']] = [df_line['blockhash'], values, df_line['time']]
+            # Almacenamos la información que deseamos en el diccionario previamente creado
+            # La key del diccionario será el identificador de cada transacción "txid"
+            # El contenido de cada key será un diccionario con los siguientes items:
+            #    - el hash identificativo del bloque al que pertenece la transacción
+            #    - una lista con todos los valores de "vout" de las transacciones
+            #    - el tiempo registrado de inicio de la transacción
+            txs_data[df_line['txid']] = {'blockhash': df_line['blockhash'],
+                                         'values': values,
+                                         'time': df_line['time']}
     return txs_data
