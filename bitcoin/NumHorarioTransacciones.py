@@ -1,5 +1,6 @@
 import datetime
 import matplotlib.pyplot as plt
+from bitcoin import PlotColumns
 
 
 def cantidad_transacciones_hr(txs_data, representar='N'):
@@ -67,23 +68,17 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
         hora_ejex.append(j)
         num_transacciones_y.append(cantidad)
 
-    # Representamos gráficamente los resultados
-    plt.style.use('ggplot')  # Utilizaremos el tema ggplot
+    # Definimos datos para el eje x y para el eje y
+    x = hora_ejex
+    y = num_transacciones_y
+    titulo_x = 'Hora del día'
+    titulo_y = 'Número de transacciones por hora'
+    plot_title = 'CANTIDAD DE TRANSACCIONES OCURRIDAS DURANTE CADA HORA'
+    size = (20, 10)  # Parámetro con el tamaño del gráfico resultante
+    plot_name = 'A5_NumHorarioTransacciones.png'
 
-    # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(20, 10))
-    plt.bar(hora_ejex, num_transacciones_y)
-    plt.xticks(range(len(hora_ejex)), hora_ejex, fontsize=16, rotation=90)
-    plt.xlabel('Hora del día', fontsize=18)
-    plt.ylabel('Número de transacciones por hora', fontsize=18)
-    plt.title('CANTIDAD DE TRANSACCIONES OCURRIDAS DURANTE CADA HORA', fontsize=20)
-    plt.savefig('../img/A5_numhorariotransacciones.png', dpi=100)
-
-    # Analizo el parámetro de entrada para estudiar si representamos la gráfica
-    if representar == 'N':
-        plt.close(fig)
-    else:
-        plt.show()
-        plt.close(fig)
+    # Llamamos a la función que dibuja el gráfico
+    PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
+                               size, plot_name, representar)
 
     return

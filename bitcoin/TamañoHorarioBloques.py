@@ -1,5 +1,6 @@
 import datetime
 import matplotlib.pyplot as plt
+from bitcoin import PlotColumns
 
 
 def media_size_bloque_hr(block_data, representar='N'):
@@ -69,23 +70,17 @@ def media_size_bloque_hr(block_data, representar='N'):
         hora_ejex.append(j)
         tamaño_medio_y.append(valor_medio)
 
-    # Representamos gráficamente los resultados
-    plt.style.use('ggplot')  # Utilizaremos el tema ggplot
+    # Definimos datos para el eje x y para el eje y
+    x = hora_ejex
+    y = tamaño_medio_y
+    titulo_x = 'Hora del día'
+    titulo_y = 'Tamaño medio de los bloques'
+    plot_title = 'TAMAÑO MEDIO DE LOS BLOQUES PARA CADA HORA'
+    size = (20, 10)  # Parámetro con el tamaño del gráfico resultante
+    plot_name = 'A4_TamañoMedioBloques.png'
 
-    # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(20, 10))
-    plt.bar(hora_ejex, tamaño_medio_y)
-    plt.xticks(range(len(hora_ejex)), hora_ejex, fontsize=16, rotation=90)
-    plt.xlabel('Hora del día', fontsize=18)
-    plt.ylabel('Tamaño medio de los bloques', fontsize=18)
-    plt.title('TAMAÑO MEDIO DE LOS BLOQUES PARA CADA HORA', fontsize=20)
-    plt.savefig('../img/A4_tamañomediobloques.png', dpi=100)
-
-    # Analizo el parámetro de entrada para estudiar si representamos la gráfica
-    if representar == 'N':
-        plt.close(fig)
-    else:
-        plt.show()
-        plt.close(fig)
+    # Llamamos a la función que dibuja el gráfico
+    PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
+                               size, plot_name, representar)
 
     return

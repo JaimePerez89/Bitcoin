@@ -1,5 +1,6 @@
 import datetime
 import matplotlib.pyplot as plt
+from bitcoin import PlotColumns
 
 
 def tiempo_medio_bloques(block_data, representar='N'):
@@ -20,7 +21,6 @@ def tiempo_medio_bloques(block_data, representar='N'):
     # gráfica de los resultados
     block_x = []
     delta_time_y = []
-
 
     # Iteramos para cada uno de los bloques
     for i in block_data:
@@ -51,25 +51,17 @@ def tiempo_medio_bloques(block_data, representar='N'):
         except:
             print("No se dispone de tiempo de referencia previo para el bloque {}".format(i))
 
-    # Representamos gráficamente los resultados
-    plt.style.use('ggplot')  # Utilizaremos el tema ggplot
+    # Definimos datos para el eje x y para el eje y
+    x = block_x
+    y = delta_time_y
+    titulo_x = 'Identificador hash de cada bloque'
+    titulo_y = 'Diferencia de tiempos entre cada bloque consecutivo (s)'
+    plot_title = 'DIFERENCIA DE TIEMPOS ENTRE BLOQUES CONSECUTIVOS (segundos)'
+    size = (50, 45)  # Parámetro con el tamaño del gráfico resultante
+    plot_name = 'A3_TiempoBloquesConsecutivos.png'
 
-    # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(60, 40))
-    plt.bar(block_x, delta_time_y)
-    plt.xticks(range(len(block_x)), block_x, fontsize=8, rotation=90)
-    # La etiqueta x solo vamos a incluir la referencia de un bloque. La referencia del anterior
-    # la vamos a omitir para no saturar más aún el gráfico
-    plt.xlabel('Identificador hash de cada bloque', fontsize=18)
-    plt.ylabel('Diferencia de tiempos entre cada bloque consecutivo (s)', fontsize=18)
-    plt.title('DIFERENCIA DE TIEMPOS ENTRE BLOQUES CONSECUTIVOS (segundos)', fontsize=30)
-    plt.savefig('../img/A3_tiempobloquesconsecutivos.png', dpi=100)
-
-    # Analizo el parámetro de entrada para estudiar si representamos la gráfica
-    if representar == 'N':
-        plt.close(fig)
-    else:
-        plt.show()
-        plt.close(fig)
+    # Llamamos a la función que dibuja el gráfico
+    PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
+                               size, plot_name, representar)
 
     return

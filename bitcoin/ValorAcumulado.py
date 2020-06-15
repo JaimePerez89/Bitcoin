@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from bitcoin import PlotColumns
+
 
 def valor_acumulado_txs(block_data, txs_data, representar='N'):
     '''
@@ -48,23 +50,18 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
         print("El valor acumulado de las transacciones para el bloque '{}' es {}"
               .format(i, acum_value))
 
-    # Representamos gráficamente los resultados
-    plt.style.use('ggplot')  # Utilizaremos el tema ggplot
+    # Definimos datos para el eje x y para el eje y
+    x = block_x
+    y = valor_acumulado_y
+    titulo_x = 'Identificador hash de cada bloque'
+    titulo_y = 'Valor acumulado de las transacciones / bloque'
+    plot_title = 'VALOR ACUMULADO DE LAS TRANSACCIONES EJECUTADAS EN CADA BLOQUE'
+    size = (50, 45)  # Parámetro con el tamaño del gráfico resultante
+    plot_name = 'A2_ValorAcumulado.png'
 
-    # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(60, 40))
-    plt.bar(block_x, valor_acumulado_y)
-    plt.xticks(range(len(block_x)), block_x, fontsize=8, rotation=90)
-    plt.xlabel('Identificador hash de cada bloque', fontsize=18)
-    plt.ylabel('Valor acumulado de las transacciones / bloque', fontsize=18)
-    plt.title('VALOR ACUMULADO DE LAS TRANSACCIONES EJECUTADAS EN CADA BLOQUE', fontsize=30)
-    plt.savefig('../img/A2_valoracumulado.png', dpi=100)
+    # Llamamos a la función que dibuja el gráfico
+    PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
+                               size, plot_name, representar)
 
-    # Analizo el parámetro de entrada para estudiar si representamos la gráfica
-    if representar == 'N':
-        plt.close(fig)
-    else:
-        plt.show()
-        plt.close(fig)
     return
 

@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from bitcoin import PlotColumns
 
 
 def num_transacciones(block_data, representar='N'):
@@ -35,22 +36,17 @@ def num_transacciones(block_data, representar='N'):
         print("El bloque '{}' tiene \t{} transacciones"
               .format(i, block_data[i]['nTx']))
 
-    # Representamos gráficamente los resultados
-    plt.style.use('ggplot')  # Utilizaremos el tema ggplot
+    # Definimos datos para el eje x y para el eje y
+    x = x
+    y = y
+    titulo_x = 'Identificador hash de cada bloque'
+    titulo_y = 'Número de transacciones / bloque'
+    plot_title = 'NÚMERO DE TRANSACCIONES EJECUTADAS EN CADA BLOQUE'
+    size = (50, 45)  # Parámetro con el tamaño del gráfico resultante
+    plot_name = 'A1_NumTransacciones.png'
 
-    # Definimos un tamaño que nos resulte cómodo de visualizar
-    fig = plt.figure(figsize=(60, 40))
-    plt.bar(x, y)
-    plt.xticks(range(len(x)), x, fontsize=8, rotation=90)
-    plt.xlabel('Identificador hash de cada bloque', fontsize=18)
-    plt.ylabel('Número de transacciones / bloque', fontsize=18)
-    plt.title('NÚMERO DE TRANSACCIONES EJECUTADAS EN CADA BLOQUE', fontsize=30)
-    plt.savefig('../img/A1_numtransacciones.png', dpi=100)
+    # Llamamos a la función que dibuja el gráfico
+    PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
+                               size, plot_name, representar)
 
-    # Analizo el parámetro de entrada para estudiar si representamos la gráfica
-    if representar == 'N':
-        plt.close(fig)
-    else:
-        plt.show()
-        plt.close(fig)
     return
