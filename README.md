@@ -46,3 +46,19 @@ No es necesario referenciar el path durante la ejecución del código ya que se 
 
 * requirements.txt: fichero con la relación de módulos adicionales necesarios para la ejecución
 del código
+
+### PARTICULARIDADES
+Las funciones que presentan los resultados de cada apartado disponen de un parámetro (Y o N) que
+permite la representación inline de la gráfica. Por defecto, el parámetro coge el valor "N".
+
+En el entorno de la máquina virtual, matplotlib viene configurado de tal forma que si queremos
+representar la gráfica inline nos devuelve el siguiente warning:
+* matplotlib is currently using agg which is a non-gui backend so cannot show the figure
+
+La instalación del módulo "tkinter" y el uso de "matplotlib.use('TkAgg')" lo solucionaría, pero
+como la instalación del módulo es a través del terminal "sudo apt-get install python3-tk", y con el
+objetivo de no modificar dicha máquina virtual más alla del entorno virtual creado para esta PEC,
+no se va a instalar esta opción.
+
+Adicionalmente al parámetro anterior, las funciones guardan en la carpeta "/img" todas las imágenes
+por lo que no se ha considerado crítica la instalación del módulo "tkinter"
