@@ -16,6 +16,6 @@ Parámetros de entrada:
 
 El png generado tiene el nombre "A5_numhorariotransacciones.png"
 '''
-NumHorarioTransacciones.cantidad_transacciones_hr(txs_data, representar='Y')
+NumHorarioTransacciones.cantidad_transacciones_hr(txs_data, representar='N')
 
 # Nota: Tiempo medio de ejecución 14 segundo aprox.

@@ -15,6 +15,6 @@ Parámetros de entrada:
 
 El png generado tiene el nombre "A3_tiempobloquesconsecutivos.png"
 '''
-TiempoMedio.tiempo_medio_bloques(block_data, representar='Y')
+TiempoMedio.tiempo_medio_bloques(block_data, representar='N')
 
 # Nota: Tiempo medio de ejecución 14 segundos aprox.
