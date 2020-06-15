@@ -45,7 +45,7 @@ def num_transacciones(block_data, representar='N'):
     plt.xlabel('Identificador hash de cada bloque', fontsize=18)
     plt.ylabel('Número de transacciones / bloque', fontsize=18)
     plt.title('NÚMERO DE TRANSACCIONES EJECUTADAS EN CADA BLOQUE', fontsize=30)
-    plt.savefig('../img/numtransacciones.png', dpi=100)
+    plt.savefig('../img/A1_numtransacciones.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
     if representar == 'N':

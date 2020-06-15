@@ -58,7 +58,7 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
     plt.xlabel('Identificador hash de cada bloque', fontsize=18)
     plt.ylabel('Valor acumulado de las transacciones / bloque', fontsize=18)
     plt.title('VALOR ACUMULADO DE LAS TRANSACCIONES EJECUTADAS EN CADA BLOQUE', fontsize=30)
-    plt.savefig('../img/valoracumulado.png', dpi=100)
+    plt.savefig('../img/A2_valoracumulado.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
     if representar == 'N':

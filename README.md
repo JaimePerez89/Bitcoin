@@ -1,20 +1,48 @@
-### Objetivo del proyecto
+### OBJETIVO DEL PROYECTO
 
-El presente proyecto se encuadra dentro de las Pruebas de Evalución Continua de la asignatura Programación para la ciencia de datos del master da Análisis de Datos de la Univerdidad UOC.
+El presente proyecto se encuadra dentro de las Pruebas de Evalución Continua de la asignatura
+ Programación para la Ciencia de Datos del master da Análisis de Datos de la universidad UOC.
 
-El objetivo será desarrollar un paquete en Python capaz de realizar un análisis sencillo de datos de Bitcoin.
+El objetivo será desarrollar un paquete en Python capaz de realizar un análisis sencillo de
+ datos de una serie de transacciones de Bitcoin.
 
-### Estructura del proyecto
+### ESTRUCTURA DEL PROYECTO
 
 La estructura de directorios es la siguiente:
+
 * bitcoin: incluye todos los archivos .py con las funciones a utilizar durante el análisis.
-* data: carpeta destinada a los archivos "inputs" de nuestro programa. Será necesario, por parte de los usuarios, incluir en esta carpeta los ficheros originales "blocks.json" y "txs.json".
+    * En concreto, el archivo "basic_analysis.py" incluye la llamada a todas las funciones
+    en el orden solicitado en el enunciado.
+    
+* data: carpeta destinada a los archivos "inputs" de nuestro programa. 
+Será necesario su creación por parte de los usuarios. Además, se deberán incluir en esta carpeta
+ los ficheros originales proporcionados junto a la práctica:
+    * "blocks.json"
+    * "txs.json"
+    
 * doc: carpeta donde se incluye la documentación relacionada con el proyeco. En concreto:
-    * XXXXX
-    * XXXXXX
-* examples: incluye ejemplos de ejecución del programa, mostrando tanto los inputs como los outputs.
-* test: incluye ficheros .py con pruebas realizadas a los ficheros de trabajo, así como resultados de los mismos.
-* INSTALL.md: fichero con las instrucciones de uso e instalación del proyecto.
+    * Enunciado pdf de la PEC4
+    
+* examples: incluye un ejemplo por cada apartado solicitado en la PEC4. (Los ejemplos se
+presentan de forma independiente para mayor flexibilidad, aunque sería posible realizar
+la carga de los datos mediante las funciones de lectura una única vez)
+    * A1_Num_Transacciones.py
+    * A2_Valor_Transacciones.py
+    * A3_Tiempo_Bloques.py
+    * A4_Media_Bloques_Hora.py
+    * A5_Num_Transacciones_Hora.py
+
+* img: carpeta con imágenes resultantes de la ejecución de las funciones de cada apartado.
+No es necesario referenciar el path durante la ejecución del código ya que se conoce de antemano.
+      
+* test: incluye ficheros .py con pruebas realizadas a los ficheros de trabajo,
+ así como resultados de los mismos.
+ 
+* INSTALL.md: fichero con las instrucciones previas al uso del proyecto.
+
 * LICENCE.txt: fichero con los datos de la licencia incluida en el proyecto.
+
 * README.md: fichero con información útil para el proyecto
-* OJO requirements.txt (VA DENTRO DE VENV)
+
+* requirements.txt: fichero con la relación de módulos adicionales necesarios para la ejecución
+del código

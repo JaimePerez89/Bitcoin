@@ -63,7 +63,7 @@ def tiempo_medio_bloques(block_data, representar='N'):
     plt.xlabel('Identificador hash de cada bloque', fontsize=18)
     plt.ylabel('Diferencia de tiempos entre cada bloque consecutivo (s)', fontsize=18)
     plt.title('DIFERENCIA DE TIEMPOS ENTRE BLOQUES CONSECUTIVOS (segundos)', fontsize=30)
-    plt.savefig('../img/tiempobloquesconsecutivos.png', dpi=100)
+    plt.savefig('../img/A3_tiempobloquesconsecutivos.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
     if representar == 'N':

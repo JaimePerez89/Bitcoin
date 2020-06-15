@@ -77,7 +77,7 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
     plt.xlabel('Hora del día', fontsize=18)
     plt.ylabel('Número de transacciones por hora', fontsize=18)
     plt.title('CANTIDAD DE TRANSACCIONES OCURRIDAS DURANTE CADA HORA', fontsize=20)
-    plt.savefig('../img/numhorariotransacciones.png', dpi=100)
+    plt.savefig('../img/A5_numhorariotransacciones.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
     if representar == 'N':

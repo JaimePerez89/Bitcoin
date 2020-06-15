@@ -79,7 +79,7 @@ def media_size_bloque_hr(block_data, representar='N'):
     plt.xlabel('Hora del día', fontsize=18)
     plt.ylabel('Tamaño medio de los bloques', fontsize=18)
     plt.title('TAMAÑO MEDIO DE LOS BLOQUES PARA CADA HORA', fontsize=20)
-    plt.savefig('../img/tamañomediobloques.png', dpi=100)
+    plt.savefig('../img/A4_tamañomediobloques.png', dpi=100)
 
     # Analizo el parámetro de entrada para estudiar si representamos la gráfica
     if representar == 'N':
