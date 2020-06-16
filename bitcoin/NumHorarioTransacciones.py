@@ -26,8 +26,11 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
     hora_ejex = []
     num_transacciones_y = []
 
-    # Inicializamos un diccionario donde guardaremos los resultados
+    # Inicializamos un diccionario donde guardaremos los resultados durante los bluques
     num_transacciones = {}
+
+    # Inicializamos un diccionario donde guardaremos los resultados finales
+    results = {}
 
     for i in txs_data:
         # Obtengo la hora de inicio de la transaccion
@@ -68,6 +71,9 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
         hora_ejex.append(j)
         num_transacciones_y.append(cantidad)
 
+        # Añadimos al diccionario de resultados
+        results[j] = cantidad
+
     # Definimos datos para el eje x y para el eje y
     x = hora_ejex
     y = num_transacciones_y
@@ -81,4 +87,4 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return
+    return results

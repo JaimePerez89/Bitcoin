@@ -25,16 +25,24 @@ def num_transacciones(block_data, representar='N'):
     x = []
     y = []
 
+    # Inicializamos un diccionario con los resultados
+    results = {}
+
     # Iteramos para cada elemento del diccionario de entrada
     for i in block_data:
-        # Añadimos la información a las listas de ejes
+        num_tran = block_data[i]['nTx']
+
+        # Añadimos la información a las listas de ejes para representar
         x.append(i)
-        y.append(block_data[i]['nTx'])
+        y.append(num_tran)
+
+        # Añadimos la info a un diccionario que retornaremos como solución
+        results[i] = num_tran
 
         # Imprimimos por pantalla un mensaje donde se expone el bloque analizado
         # y el número de transacciones ocurridas en él
         print("El bloque '{}' tiene \t{} transacciones"
-              .format(i, block_data[i]['nTx']))
+              .format(i, num_tran))
 
     # Definimos datos para el eje x y para el eje y
     x = x
@@ -49,4 +57,4 @@ def num_transacciones(block_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return
+    return results

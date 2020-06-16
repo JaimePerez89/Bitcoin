@@ -24,7 +24,10 @@ def media_size_bloque_hr(block_data, representar='N'):
     # Inicializamos dos listas que nos servirán para representar los
     # resultados
     hora_ejex = []
-    tamaño_medio_y = []
+    tamanio_medio_y = []
+
+    # Inicializo un diccionario que retornaremos como solucion
+    results = {}
 
     # Inicializamos un diccionario donde guardaremos los resultados
     media_bloque = {}
@@ -68,11 +71,14 @@ def media_size_bloque_hr(block_data, representar='N'):
         # Además de mostrar el resultado, agregamos la info a las lista que nos
         # servirán para representar los ejes en la gráfica
         hora_ejex.append(j)
-        tamaño_medio_y.append(valor_medio)
+        tamanio_medio_y.append(valor_medio)
+
+        # Añadimos la info a un diccionario que retornaremos como solución
+        results[j] = valor_medio
 
     # Definimos datos para el eje x y para el eje y
     x = hora_ejex
-    y = tamaño_medio_y
+    y = tamanio_medio_y
     titulo_x = 'Hora del día'
     titulo_y = 'Tamaño medio de los bloques'
     plot_title = 'TAMAÑO MEDIO DE LOS BLOQUES PARA CADA HORA'
@@ -83,4 +89,4 @@ def media_size_bloque_hr(block_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return
+    return results

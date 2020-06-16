@@ -64,4 +64,4 @@ def tiempo_medio_bloques(block_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return
+    return block_x, delta_time_y

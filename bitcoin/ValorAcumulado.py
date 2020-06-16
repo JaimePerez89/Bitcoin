@@ -26,6 +26,10 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
     # resultados
     block_x = []
     valor_acumulado_y = []
+
+    # Inicializo un diccionario que retornaremos como solucion
+    results = {}
+
     # Itero para cada bloque
     for i in block_data:
         # Para cada bloque inicializo una lista vacia donde acumularemos los valores
@@ -45,6 +49,9 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
         block_x.append(i)
         valor_acumulado_y.append(acum_value)
 
+        # Añadimos la info a un diccionario que retornaremos como solución
+        results[i] = acum_value
+
         # Imprimo por pantalla un mensaje donde se muestra para cada bloque, el valor
         # acumulado de las transacciones
         print("El valor acumulado de las transacciones para el bloque '{}' es {}"
@@ -63,5 +70,5 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return
+    return results
 
