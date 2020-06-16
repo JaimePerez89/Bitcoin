@@ -16,6 +16,6 @@ Parámetros de entrada:
 
 El png generado tiene el nombre "A4_tamañomediobloques.png"
 '''
-TamanioHorarioBloques.media_size_bloque_hr(block_data, representar='N')
+results_A4 = TamanioHorarioBloques.media_size_bloque_hr(block_data, representar='N')
 
 # Nota: Tiempo medio de ejecución 1 segundo aprox.

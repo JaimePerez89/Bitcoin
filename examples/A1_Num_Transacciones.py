@@ -15,6 +15,6 @@ Parámetros de entrada:
        
 El png generado tiene el nombre "A1_numtransacciones.png"
 '''
-NumTransacciones.num_transacciones(block_data, representar='N')
+results_A1 = NumTransacciones.num_transacciones(block_data, representar='N')
 
 # Nota: Tiempo medio de ejecución 12 segundos aprox.

@@ -17,6 +17,6 @@ Parámetros de entrada:
 
 El png generado tiene el nombre "A2_valoracumulado.png"
 '''
-ValorAcumulado.valor_acumulado_txs(block_data, txs_data, representar='N')
+results_A2 = ValorAcumulado.valor_acumulado_txs(block_data, txs_data, representar='N')
 
 # Nota: Tiempo medio de ejecución 26 segundos aprox.
