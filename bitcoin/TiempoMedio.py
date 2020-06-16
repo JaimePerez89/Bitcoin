@@ -1,10 +1,11 @@
 import datetime
-import matplotlib.pyplot as plt
 from bitcoin import PlotColumns
 
 
 def tiempo_medio_bloques(block_data, representar='N'):
     '''
+    Función que calcula el tiempo medio en segundos que se produce entre dos bloques
+    consecutivos.
 
     :param block_data: diccionario con la información de bloques (resultante de ejecutar
                         la función de lectura.
@@ -12,15 +13,19 @@ def tiempo_medio_bloques(block_data, representar='N'):
                          al mensaje.
                          'N' (valor por defecto) la función no representa la
                          gráfica junto al mensaje
-    :return: mensaje por pantalla con info sobre bloques consecutivos y tiempo transcurrido
+    :return: results (dict): diccionario con los resultados
+             mensaje por pantalla con info sobre bloques consecutivos y tiempo transcurrido
                 entre ellos en segundos
-            'tiempobloquesconsecutivos.png' en la carpeta de proyecto 'img'
+            'A3_TiempoBloquesConsecutivos.png' en la carpeta de proyecto '/img'
     '''
 
     # Inicializamos dos listas vacias que nos servirán como ejes para la representación
     # gráfica de los resultados
     block_x = []
     delta_time_y = []
+
+    # Inicializamos un diccionario para almacenar los resultados
+    results = {}
 
     # Iteramos para cada uno de los bloques
     for i in block_data:
@@ -48,8 +53,12 @@ def tiempo_medio_bloques(block_data, representar='N'):
             print("El tiempo trancurrido entre el bloque '{}' y el bloque '{}' ha sido de {} segundos"
                   .format(i, bloque_previo, delta.total_seconds()))
 
+            # Almacenamos la informacion en el diccionario de resultados
+            results[i] = [bloque_previo, delta.total_seconds()]
+
         except:
             print("No se dispone de tiempo de referencia previo para el bloque {}".format(i))
+            results[i] = 'No hay tiempo disponible'
 
     # Definimos datos para el eje x y para el eje y
     x = block_x
@@ -64,4 +73,4 @@ def tiempo_medio_bloques(block_data, representar='N'):
     PlotColumns.plot_col_graph(x, y, titulo_x, titulo_y, plot_title,
                                size, plot_name, representar)
 
-    return block_x, delta_time_y
+    return results

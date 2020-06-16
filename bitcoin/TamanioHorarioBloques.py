@@ -1,5 +1,4 @@
 import datetime
-import matplotlib.pyplot as plt
 from bitcoin import PlotColumns
 
 
@@ -16,9 +15,10 @@ def media_size_bloque_hr(block_data, representar='N'):
                          al mensaje.
                          'N' (valor por defecto) la función no representa la
                          gráfica junto al mensaje
-    :return: mensaje por pantalla con info sobre el tamaño medio de los bloques en función
+    :return: results (dict): diccionario con los resultados
+             mensaje por pantalla con info sobre el tamaño medio de los bloques en función
                 de la hora de inicio
-            'tamañomediobloques.png' en la carpeta de proyecto 'img'
+            'A4_TamañoMedioBloques.png' en la carpeta de proyecto 'img'
     '''
 
     # Inicializamos dos listas que nos servirán para representar los

@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from bitcoin import PlotColumns
 
 
@@ -17,8 +16,9 @@ def num_transacciones(block_data, representar='N'):
                          'N' (valor por defecto) la función no representa la
                          gráfica junto al mensaje
 
-    :return mensaje por pantalla con info sobre bloque y num. transacciones
-            'numtransacciones.png' en la carpeta de proyecto 'img'
+    :return  results (dict): diccionario con los resultados
+             mensaje por pantalla con info sobre bloque y num. transacciones
+            'A1_NumTransacciones.png' en la carpeta de proyecto '/img'
     '''
 
     # Creamos dos listas vacias, que serán los futuros ejes de los gráficos

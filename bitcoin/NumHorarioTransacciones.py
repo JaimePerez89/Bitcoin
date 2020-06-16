@@ -1,5 +1,4 @@
 import datetime
-import matplotlib.pyplot as plt
 from bitcoin import PlotColumns
 
 
@@ -7,7 +6,7 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
     '''
     Función que contabiliza y acumula el número de transacciones en función de la hora
     de inicio de las mismas, devolviendo por pantalla un mensaje.
-    Si se indica con el parámetro "representar", junto al mensaje se representa
+    Si se indica con el parámetro "representar", junto al mensaje, se representa
     gráficamente los resultados mediante un gráfico de barras
 
     :param block_data: diccionario con la información de transacciones (resultante
@@ -16,9 +15,10 @@ def cantidad_transacciones_hr(txs_data, representar='N'):
                          al mensaje.
                          'N' (valor por defecto) la función no representa la
                          gráfica junto al mensaje
-    :return: mensaje por pantalla con info sobre el número de transacciones que se producen
+    :return: results (dict): diccionario con los resultados
+             mensaje por pantalla con info sobre el número de transacciones que se producen
                 para cada hora.
-            'numhorariotransacciones.png' en la carpeta de proyecto 'img'
+            'A5_NumHorarioTransacciones.png' en la carpeta de proyecto 'img'
     '''
 
     # Inicializamos dos listas que nos servirán para representar los

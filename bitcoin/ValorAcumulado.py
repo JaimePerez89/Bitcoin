@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from bitcoin import PlotColumns
 
 
@@ -17,8 +16,9 @@ def valor_acumulado_txs(block_data, txs_data, representar='N'):
     :param representar: parámetro que indica si deseamos representar la gráfica
                     'Y': la función representa por pantalla la gráfica junto al mensaje.
                     'N' (valor por defecto) la función no representa la gráfica
-    :return: mensaje por pantalla con info sobre bloque y valor acumulado de las transacciones
-            'valoracumulado.png' en la carpeta de proyecto 'img' con los resultados
+    :return: results (dict): diccionario con los resultados
+             mensaje por pantalla con info sobre bloque y valor acumulado de las transacciones
+             'A2_ValorAcumulado.png' en la carpeta de proyecto 'img' con los resultados
     '''
 
     # Inicializo dos listas a las cuales les iremos insertando la información
