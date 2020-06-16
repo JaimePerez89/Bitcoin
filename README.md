@@ -36,7 +36,8 @@ la carga de los datos mediante las funciones de lectura una única vez)
 No es necesario referenciar el path durante la ejecución del código ya que se conoce de antemano.
       
 * test: incluye ficheros .py con pruebas realizadas a los ficheros de trabajo,
- así como resultados de los mismos.
+ así como resultados de los mismos. Se incluye un test por cada una de las funciones de trabajo
+ que proporcionan una solución. Las funciones que devuelven gráficas no han sido testeadas
  
 * INSTALL.md: fichero con las instrucciones previas al uso del proyecto.
 
